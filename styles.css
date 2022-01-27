@@ -1,3 +1,8 @@
+:root {
+    --oddBackground: #f1f1f1;
+    --evenBackground: #e3dfdd;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -83,18 +88,10 @@ section {
     height: 100vh;
 }
 
-.one {
-    background: rgb(36, 164, 138);
+.oddPage {
+    background: var(--oddBackground)
 }
 
-.two {
-    background: rgb(211, 79, 79)
-}
-
-.three {
-    background: rgb(67, 91, 175);
-}
-
-.four {
-    background: lightsalmon;
+.evenPage {
+    background: var(--evenBackground)
 }
