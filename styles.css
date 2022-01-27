@@ -1,10 +1,73 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
+/******************** HEADER CSS BEGINS ********************/
+.header {
+    width: 100%;
+    height: 80px;
+    display: block;
+    background: #101010;
+}
+
+.innerHeader {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logoContainer {
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.logoContainer a {
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.logoContainer a span {
+    font-weight: 800;
+}
+
+.navigation {
+    float: right;
+    height: 100%;
+}
+
+.navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+}
+
+.navigation a:last-child {
+    padding-right: 0;
+}
+
+.navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+/******************** MAIN CONTAINER CSS BEGINS ********************/
 section {
     height: 100vh;
     display: flex;
