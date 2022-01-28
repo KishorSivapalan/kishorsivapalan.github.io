@@ -195,9 +195,9 @@ body {
 }
 
 .container {
-    /* scroll-snap-type: y mandatory;
-    overflow-y: scroll; */
-    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
     background: var(--oddBackground);
 }
 
@@ -210,11 +210,11 @@ section {
     color: black;
     font-family: 'Montserrat';
     background: var(--oddBackground);
-    /* scroll-snap-align: start; */
+    scroll-snap-align: start;
 }
 
 /******************** PAGE ONE CSS BEGINS ********************/
-.pageOne {
+.pageOne, .pageTwo {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
