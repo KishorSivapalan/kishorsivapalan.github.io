@@ -203,6 +203,8 @@ body {
 
 section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 18%;
     margin-right: 18%;
     color: black;
@@ -214,9 +216,9 @@ section {
 /******************** PAGE ONE CSS BEGINS ********************/
 .pageOne {
     display: grid;
-    height: 100vh;
     grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
+    height: 100vh; 
 }
 
 .profilePanel {
