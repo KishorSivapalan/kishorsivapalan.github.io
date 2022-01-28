@@ -194,20 +194,21 @@ body {
     margin: 0;
 }
 
+.container {
+    /* scroll-snap-type: y mandatory;
+    overflow-y: scroll; */
+    height: 100vh;
+}
+
 section {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
+    place-items: center;
     color: black;
     font-family: 'Montserrat';
-    scroll-snap-align: start;
-}
-
-.container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
+    /* scroll-snap-align: start; */
 }
 
 .oddPage {
@@ -216,4 +217,91 @@ section {
 
 .evenPage {
     background: var(--evenBackground)
+}
+
+.pageOne {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1.5rem;
+    place-items: center;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.profilePanel {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    margin-top: 100px;
+    place-items: center;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    background: cyan;
+    border-radius: 10px;
+    padding: 50px 36%;
+    box-shadow: 0rem 1rem 2rem -1rem;
+}
+
+.profileImage {
+    display: block;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    background: white;
+    border-radius: 5px;
+}
+
+.simpleInfo {
+    display: block;
+    margin: auto;
+}
+
+.nameInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+.titleInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+}
+
+.socialsInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.buttonInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.aboutMe {
+    background: darkred;
+    border-radius: 10px;
+    padding: 50px 50px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    box-shadow: 0rem 1rem 2rem -1rem;
+}
+
+.bio {
+    background: green;
+    border-radius: 10px;
+    padding: 50px 50px;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    box-shadow: 0rem 1rem 2rem -1rem;
 }
