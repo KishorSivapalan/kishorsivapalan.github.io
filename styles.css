@@ -1,84 +1,201 @@
 :root {
     --oddBackground: #f1f1f1;
     --evenBackground: #e3dfdd;
+    --headerBackground: rgb(16, 16, 16);
+    --onClick: #a8a8a8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+*, *::before, *::after {
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 /******************** HEADER CSS BEGINS ********************/
-.header {
+header {
+    background: var(--headerBackground);
+    text-align: center;
+    position: fixed;
     width: 100%;
-    height: 80px;
-    display: block;
-    background: #101010;
-}
-
-.innerHeader {
-    width: 1000px;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-.logoContainer {
-    height: 100%;
-    display: table;
-    float: left;
-}
-
-.logoContainer a {
-    color: white;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
     font-family: 'Montserrat';
-    font-size: 32px;
-    font-weight: 200;
+    z-index: 999;
 }
 
-.logoContainer a span {
-    font-weight: 800;
-}
-
-.navigation {
-    float: right;
-    height: 100%;
-}
-
-.navigation a {
-    height: 100%;
-    display: table;
-    float: left;
-    padding: 0px 20px;
-}
-
-.navigation a:last-child {
-    padding-right: 0;
-}
-
-.navigation a li {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
+.logo a {
+    text-decoration: none;
     color: white;
-    font-family: 'Montserrat';
-    font-size: 16px;
+}
+
+.logo a span {
+    font-weight: 300;
+}
+
+.navToggle {
+    display: none;
+}
+
+.navToggleLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+    content: '';
+    position: absolute;
+}
+
+.navToggleLabel span::before {
+    bottom: 7px;
+}
+
+.navToggleLabel span::after {
+    top: 7px;
+}
+
+nav {
+    background: var(--headerBackground);
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.navToggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.navToggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav a:hover {
+    color: black;
+}
+
+nav a:active {
+    color: white;
+}
+
+@media screen and (min-width: 1450px) {
+    .navToggleLabel {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / span 1;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 2px;
+        background: white;
+        position: absolute;
+        bottom: -0.25em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1,1);
+    }
+
+    nav a:active {
+        color: var(--onClick);
+    }
+
+    nav a:active::before {
+        background: var(--onClick);
+    }
+
 }
 
 /******************** MAIN CONTAINER CSS BEGINS ********************/
+body {
+    margin: 0;
+}
+
 section {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
+    font-family: 'Montserrat';
     scroll-snap-align: start;
 }
 
