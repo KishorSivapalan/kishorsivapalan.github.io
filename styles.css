@@ -205,6 +205,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-left: 18%;
     margin-right: 18%;
     color: black;
@@ -272,8 +273,7 @@ section {
     background: green;
     border-radius: 10px;
     box-shadow: 0rem 1rem 2rem -1rem;
-    padding: 50px 50px;
-    margin-bottom: 25px;
+    padding: 75px 50px;
 }
 
 .aboutMe {
@@ -281,6 +281,10 @@ section {
 }
 
 .bio {
+}
+
+@media only screen and (max-width: 550px) {
+    
 }
 
 /******************** PAGE TWO CSS BEGINS ********************/
