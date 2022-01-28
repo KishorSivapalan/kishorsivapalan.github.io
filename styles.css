@@ -205,7 +205,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-left: 18%;
     margin-right: 18%;
     color: black;
@@ -270,7 +269,6 @@ section {
 
 .aboutPanel {
     display: flex;
-    align-self: flex-start;
     background: green;
     border-radius: 10px;
     box-shadow: 0rem 1rem 2rem -1rem;
