@@ -197,111 +197,83 @@ body {
 .container {
     /* scroll-snap-type: y mandatory;
     overflow-y: scroll; */
-    height: 100vh;
+    height: 100%;
+    background: var(--oddBackground);
 }
 
 section {
-    height: 100vh;
     display: flex;
-    justify-items: center;
-    align-items: center;
-    place-items: center;
+    margin-left: 18%;
+    margin-right: 18%;
     color: black;
     font-family: 'Montserrat';
+    background: var(--oddBackground);
     /* scroll-snap-align: start; */
 }
 
-.oddPage {
-    background: var(--oddBackground)
-}
-
-.evenPage {
-    background: var(--evenBackground)
-}
-
+/******************** PAGE ONE CSS BEGINS ********************/
 .pageOne {
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(2,1fr);
+    padding-bottom: 50px;
     gap: 1.5rem;
-    place-items: center;
-    justify-self: center;
-    justify-items: center;
-    align-items: center;
 }
 
 .profilePanel {
-    grid-column-start: 2;
-    grid-column-end: 6;
-    margin-top: 100px;
-    place-items: center;
-    justify-self: center;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top: 100px;
     background: cyan;
     border-radius: 10px;
-    padding: 50px 36%;
     box-shadow: 0rem 1rem 2rem -1rem;
 }
 
 .profileImage {
-    display: block;
-    margin: auto;
     height: 150px;
     width: 150px;
     padding: 5px;
     background: white;
     border-radius: 5px;
+    margin: 25px 25px 0px 25px;
 }
 
 .simpleInfo {
-    display: block;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 25px 25px 25px;
 }
 
 .nameInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -10px;
     text-transform: uppercase;
 }
 
 .titleInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -30px;
+
 }
 
 .socialsInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -15px;
+
 }
 
 .buttonInfo {
+}
+
+.aboutPanel {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
+    background: green;
+    border-radius: 10px;
+    box-shadow: 0rem 1rem 2rem -1rem;
+    padding: 50px 50px;
 }
 
 .aboutMe {
-    background: darkred;
-    border-radius: 10px;
-    padding: 50px 50px;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    box-shadow: 0rem 1rem 2rem -1rem;
+
 }
 
 .bio {
-    background: green;
-    border-radius: 10px;
-    padding: 50px 50px;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    box-shadow: 0rem 1rem 2rem -1rem;
 }
+
+/******************** PAGE TWO CSS BEGINS ********************/
