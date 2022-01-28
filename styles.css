@@ -210,13 +210,14 @@ section {
     font-family: 'Montserrat';
     background: var(--oddBackground);
     gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-weight: 500;
 }
 
 /******************** PAGE ONE CSS BEGINS ********************/
-.pageOne {
-    display: flex;
-}
-
 .profilePanel {
     display: flex;
     flex-direction: column;
@@ -269,9 +270,8 @@ section {
     background: var(--evenBackground);
     border-radius: 10px;
     box-shadow: 0rem 1rem 2rem -1rem;
-    height: 30vh;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    justify-content: start;
 }
 
 .aboutMe {
@@ -293,7 +293,36 @@ section {
 }
 
 /******************** PAGE TWO CSS BEGINS ********************/
+.skillsPanel {
+    display: flex;
+    flex-direction: column;
+    background: var(--evenBackground);
+    border-radius: 10px;
+    box-shadow: 0rem 1rem 2rem -1rem;
+    height: auto;
+    justify-content: start;
+    padding: 0 25px;
+}
 
+.educationPanel {
+    display: flex;
+    flex-direction: column;
+    background: var(--evenBackground);
+    border-radius: 10px;
+    box-shadow: 0rem 1rem 2rem -1rem;
+    height: auto;
+    justify-content: start;
+    padding: 0 25px;
+}
+
+.educationPanel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.educationPanel span {
+    font-weight: bold;
+}
 /******************** PAGE THREE CSS BEGINS ********************/
 
 /******************** PAGE FOUR CSS BEGINS ********************/
