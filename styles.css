@@ -223,7 +223,7 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    background: cyan;
+    background: var(--evenBackground);
     border-radius: 10px;
     box-shadow: 0rem 1rem 2rem -1rem;
 }
@@ -265,7 +265,7 @@ section {
 
 .aboutPanel {
     display: flex;
-    background: green;
+    background: var(--evenBackground);
     border-radius: 10px;
     box-shadow: 0rem 1rem 2rem -1rem;
     padding: 75px 50px;
@@ -280,3 +280,7 @@ section {
 }
 
 /******************** PAGE TWO CSS BEGINS ********************/
+
+/******************** PAGE THREE CSS BEGINS ********************/
+
+/******************** PAGE FOUR CSS BEGINS ********************/
