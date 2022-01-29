@@ -279,6 +279,34 @@ h2 {
 }
 
 .bio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0 25px;
+    width: 100%;
+}
+
+.bio h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.bio ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bio info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0 25px;
+}
+
+.bio infoAnswers {
+    grid-column-start: 2;
+    grid-column-end: 3;
     padding: 0 25px;
 }
 
@@ -301,7 +329,145 @@ h2 {
     box-shadow: 0rem 1rem 2rem -1rem;
     height: auto;
     justify-content: start;
-    padding: 0 25px;
+    padding: 0px 25px 25px 25px;
+}
+
+.skillsBars {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: auto;
+    background: inherit;
+    border-radius: 10px;
+    padding: 25px 30px;
+}
+
+.skillsBars .bar{ 
+    margin: 20px 0;
+}
+
+.skillsBars .bar:first-child {
+    margin-top: 0;
+}
+
+.skillsBars .bar .info {
+    margin-bottom: 5px;
+}
+
+.skillsBars .bar .info span{ 
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100%{
+        opacity: 1;
+    }
+}
+
+.skillsBars .bar .progressLine{ 
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar .progressLine span{ 
+    height: 100%;
+    width: 80%;
+    background: #6665ee;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progressLine.html span {
+    width: 90%;
+}
+
+.progressLine.css span {
+    width: 90%;
+}
+
+.progressLine.js span {
+    width: 75%;
+}
+
+.progressLine.java span {
+    width: 90%;
+}
+
+.progressLine.sql span {
+    width: 65%;
+}
+
+.bar .progressLine span::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -10px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+.bar .progressLine span::after {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    background: #000;
+    padding: 1px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText2 {
+    100%{
+        opacity: 1;
+    }
+}
+
+.progressLine.html span::after {
+    content: "90%";
+}
+
+.progressLine.css span::after {
+    content: "90%";
+}
+
+.progressLine.js span::after {
+    content: "75%";
+}
+
+.progressLine.java span::after {
+    content: "90%";
+}
+
+.progressLine.sql span::after {
+    content: "65%";
 }
 
 .educationPanel {
@@ -324,5 +490,6 @@ h2 {
     font-weight: bold;
 }
 /******************** PAGE THREE CSS BEGINS ********************/
+
 
 /******************** PAGE FOUR CSS BEGINS ********************/
