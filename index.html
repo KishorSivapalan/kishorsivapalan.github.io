@@ -4,134 +4,251 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap" rel="stylesheet">    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- icons -->
+    <link rel="shortcut icon" href="./images/favicon.ico">  <!-- site icon -->
+    
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Kishor Sivapalan</title>
 </head>
 <body>
-    <header class="header">
+    <header id="header" class="header flex">
         <h1 class="logo">
             <a href="#"><span>KISHOR</span>SIV</a>
         </h1>
-        <input type="checkbox" id="navToggle" class="navToggle">
+
+        <button class="toggle" expanded="false"></button>
+
         <nav>
-            <ul class="navigation">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="primaryNavigation" dataVisible="false" class="primaryNavigation flex">
+                <li><a class="aboutLink" href="#about">About</a>
+                <li><a class="skillsLink"href="#skills">Skills</a>
+                <li><a class="projectsLink"href="#projects">Projects</a>
+                <li><a class="contactLink"href="#contact">Contact</a>
             </ul>
         </nav>   
-        <label for="navToggle" class="navToggleLabel">
-            <span></span>
-        </label>
     </header>
-    <div class="container">
-        <section class="pageOne">
-            <div class="profilePanel">
-                <div class="profileBox">
-                    <img class="profileImage" src="snoop-dogg.jpg" alt="Profile Image">
-                </div>
-                <div class="simpleInfo">
-                    <div class="nameInfo">
-                        <h1>Kishor Sivapalan</h1>
-                    </div>
-                    <div class="titleInfo">
-                        <p>Computer Eng. Graduate</p>
-                    </div>
-                    <div class="socialsInfo">
-                        <p>insert social icons here later</p>
-                    </div>
-                    <div class="buttonInfo">
-                        <button class="resumeButton">DOWNLOAD CV</button>
-                    </div>
-                </div>
+    
+    <main>
+        <!--Profile Panel-->
+        <div class="background"></div>
+        <div class="profilePanel">
+            
+            <div class="name">Kishor<span>Sivapalan</span></div>
+            <div class="subtitle">Front-End Developer</div>
+            <div class="socials">
+                <a href="https://ca.linkedin.com/in/kishor-sivapalan-6b5913134" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/KishorSivapalan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:kishorsiv11@gmail.com"><i class="fas fa-at"></i></a>
             </div>
-            <div class="aboutPanel">
-                <div class="aboutMe">
-                    <h2>About</h2>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quisquam nihil provident corrupti. Placeat quis recusandae dicta quia, 
-                        ducimus quidem similique laudantium exercitationem enim 
-                        officiis consequatur odio harum labore nobis excepturi?</p>
+            <a class="resume" href="./documents/blank.pdf">Download CV</a>
+    
+            <div id="about"> 
+                <div class="picturePanel">  
+                    <h2>About Me</h2>
+                    <div class="imagetext"> 
+                        <img class="me" src="./images/weedman.jpg" alt="profile picture">
+                        <div class="aboutMe">
+                            <p>Hello, my name is Kishor! I completed my Bachelor's of Engineering (Hons.) degree in Computer Engineering at York University. I hope to pursue a career in front-end and full-stack development, with an interest in project management. I am a quick learner and a team worker that gets the job done.</p>
+                            <p>Scroll down to see more information!</p>
+                        </div>
+                    </div>   
                 </div>
-                <div class="bio">
+                <div class="bioPanel">  
                     <h2>Bio</h2>
-                    <ul class="info">
-                        <li>Age</li>
-                        <li>Email</li>
-                        <li>Phone</li>
-                    </ul>
-                    <ul class="infoAnswers">
-                        <li>24</li>
-                        <li>email@gmail.com</li>
-                        <li>647-xxx-xxxx</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="pageTwo">
-            <div class="skillsPanel">
+                    <div class="bioContents">
+                        <div class="bioIcons">
+                            <div class="row">
+                                <i class="bioIcon far fa-calendar"></i>
+                            </div>
+                            <div class="row">
+                                <i class="bioIcon far fa-envelope"></i>
+                            </div>
+                            <div class="row">
+                                <i class="bioIcon fas fa-phone"></i>
+                            </div>
+                            <div class="row">
+                                <i class="bioIcon fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="row">
+                                <i class="bioIcon fab fa-linkedin"></i>
+                            </div>
+                        </div>
+                        <div class="bio">
+                            <div class="row">
+                                <p>Age</p>
+                            </div>
+                            <div class="row">
+                                <p>Email</p>
+                            </div>
+                            <div class="row">
+                                <p>Phone</p>
+                            </div>
+                            <div class="row">
+                                <p></i>Education</p>
+                            </div>
+                            <div class="row">
+                                <p>LinkedIn</p>
+                            </div>
+                        </div>
+                        <div class="bioAns">
+                            <div class="row">
+                                <p>24</p>
+                            </div>
+                            <div class="row">
+                                <a href="mailto:kishorsiv11@gmail.com">kishorsiv11@gmail.com</a>
+                            </div>
+                            <div class="row">
+                                <p>647-xxx-xxxx</p>
+                            </div>
+                            <div class="row">
+                                <p>B. Eng.</p>
+                            </div>
+                            <div class="row">
+                                <a href="https://ca.linkedin.com/in/kishor-sivapalan-6b5913134" target="_blank">Kishor Sivapalan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>    
+        </div>
+
+        <div class="bottomGrid">
+            <!--Skill Panel-->
+            <div id="skills">
                 <h2>Technical Skills</h2>
-                <div class="skillsBars">
+                <div class="skillsPanel">
                     <div class="bar">
-                        <div class="info">
-                            <span>HTML</span>
-                        </div>
-                        <div class="progressLine html">
-                            <span></span>
-                        </div>
+                        <h3>Java<i class="langIcon fab fa-java"></i></h3>
+                        <div class="progress"><span class="langJava">Proficient</span></div>
                     </div>
                     <div class="bar">
-                        <div class="info">
-                            <span>CSS</span>
-                        </div>
-                        <div class="progressLine css">
-                            <span></span>
-                        </div>
+                        <h3>HTML<i class="langIcon fab fa-html5"></i></h3>
+                        <div class="progress"><span class="langHTML">Intermediate</span></div>
                     </div>
                     <div class="bar">
-                        <div class="info">
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="progressLine js">
-                            <span></span>
-                        </div>
+                        <h3>CSS<i class="langIcon fab fa-css3-alt"></i></h3>
+                        <div class="progress"><span class="langCSS">Intermediate</span></div>
                     </div>
                     <div class="bar">
-                        <div class="info">
-                            <span>Java</span>
-                        </div>
-                        <div class="progressLine java">
-                            <span></span>
-                        </div>
+                        <h3>JavaScript<i class="langIcon fab fa-js"></i></h3>
+                        <div class="progress"><span class="langJS">Intermediate</span></div>
                     </div>
                     <div class="bar">
-                        <div class="info">
-                            <span>MySQL</span>
+                        <h3>SQL</h3>
+                        <div class="progress"><span class="langSQL">In Progress</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Project Panel-->
+            <div id="projects">
+                <h2>Projects</h2>
+                <div class="projectPanel">
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Personal Website</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="./index.html" class="button">Learn More</a>
                         </div>
-                        <div class="progressLine sql">
-                            <span></span>
+                    </div>
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">Placeholder for Future</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="#" class="button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">EECS 4312 Video</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="#" class="button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">SRS Documentation</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="#" class="button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">ENG 4000</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="#" class="button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardContent">
+                            <h3 class="cardTitle">ENG 2001</h3>
+                            <p class="cardBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima animi ea ipsa magnam distinctio atque soluta officiis aliquam deserunt fuga?</p>
+                            <a href="#" class="button">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="educationPanel">
-                <h2>Education</h2>
-                <ul>
-                    <li><span>Bachelor of Engineering, Honours Computer Engineering</span> at Lassonde School of Engineering, York University</li>
-                </ul>
+
+            <!--Tools Panel -->
+            <div class="tools">
+                <h2>Tools & Frameworks</h2>
+                <div class="toolsPanel">
+                    <div class="logos">
+                        <i class="fa-brands fa-windows"></i>
+                        <p>Windows</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-apple"></i>
+                        <p>MacOS</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-linux"></i>
+                        <p>Linux</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <p>Git</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-node-js"></i>
+                        <p>Node.js</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-angular"></i>
+                        <p>Angular</p>
+                    </div>
+                    <div class="logos">
+                        <i class="fa-brands fa-react"></i>
+                        <p>React</p>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section class="pageThree">
-            <h1>Third Page</h1>
-        </section>
-        <section class="pageFour">
-            <h1>Fourth Page</h1>
-        </section>
-    </div>
+            <!--Contact Panel -->
+            <div id="contact">
+                <h2>Contact</h2>
+                <div class="contactPanel">
+                    <div class="logos">
+                        <a href="mailto:kishorsiv11@gmail.com"><i class="fas fa-at"></i></a>
+                        <p>Email</p>
+                    </div>
+                    <div class="logos">
+                        <a href="https://ca.linkedin.com/in/kishor-sivapalan-6b5913134" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <p>LinkedIn</p>
+                    </div>
+                    <div class="logos">
+                        <a href="https://github.com/KishorSivapalan" target="_blank"><i class="fab fa-github"></i></a>
+                        <p>Github</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty">
+            <h2>Some hidden text with 0 opacity</h2>
+        </div>
+    </main>
 </body>
 </html>
