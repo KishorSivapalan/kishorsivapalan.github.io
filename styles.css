@@ -518,13 +518,15 @@ p {
 
 .card {
     display: flex;
-    background-image: url(./images/workinprogress.jpg);
+    background-color: #f1f1f1;
     background-size: contain;
     background-position: center;
     border-radius: 0.5rem;
     color: white;
     padding: 10 10;
     max-width: 30ch;
+    min-width: 30ch;
+    height: 30ch;
     overflow: hidden;
     transition: transform 500ms ease;
 }
@@ -535,11 +537,14 @@ p {
 }
 
 .cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     --padding: 1.5rem;
     padding: var(--padding);
     background: linear-gradient(
         hsl(0 0% 0% / 0),
-        hsl(20 0% 0% / 0.3) 20%,
+        hsl(20 0% 0% / 0.5) 20%,
         hsl(0 0% 0% / 1)
     );
 }
@@ -548,7 +553,8 @@ p {
     position: relative;
     width: max-content;
     max-width: 100%;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
+    color: white;
 }
 
 .cardTitle::after {
@@ -558,7 +564,7 @@ p {
     left: calc(var(--padding) * -1);
     bottom: -2px;
     width: calc(100% + var(--padding));
-    background: green;
+    background: var(--buttonColor);
     transform-origin: left;
     transition: transform 500ms ease;
 }
@@ -573,6 +579,7 @@ p {
 }
 
 @media (hover) {
+    
     .cardContent {
         transform: translateY(65%);
         transition: transform 500ms ease;
@@ -610,13 +617,16 @@ p {
 }
 
 .button {
+    display: flex;
     cursor: pointer;
-    display: inline-block;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     background-color: var(--buttonColor);
     color: white;
     padding: 0.5em 1.25em;
     border-radius: 0.25em;
+    font-weight: bold;
 }
 
 .button:hover,
@@ -626,6 +636,19 @@ p {
 
 .button:active {
     color: var(--onClick);
+}
+
+.website {
+    background-image: url(./images/website-image.png);
+    background-size: cover;
+}
+
+.video {
+    background-image: url(./images/youtube-image.jpg);
+}
+
+.doc {
+    background-image: url(./images/document-image.jpg);
 }
 
 /******************** TOOL PANEL & CONTACT PANEL CSS BEGINS ********************/
@@ -648,10 +671,6 @@ p {
 
 #contact {
     grid-column: span 1;
-}
-
-.tools {
-    
 }
 
 .toolsPanel {
