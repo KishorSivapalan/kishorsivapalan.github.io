@@ -1,716 +1,722 @@
 :root {
-    --backgroundColor: rgba(241, 241, 241);
-    --panelColor: rgba(227, 223, 221, 0.95);
-    --headerBackground1: rgba(16, 16, 16);
-    --headerBackground2: rgba(16, 16, 16, 0.85);
-    --primaryFontFamily: 'Montserrat', sans-serif;
-    --onClick: #f1f1f1;
-    --buttonColor: rgba(57, 192, 237);
-    --shadow: 1rem 1rem 1rem -1rem;
-    --shadowColor: #03b692;
-    --scrollMargin: 20px;
+  --backgroundColor: rgba(241, 241, 241);
+  --panelColor: rgba(227, 223, 221, 0.95);
+  --headerBackground1: rgba(16, 16, 16);
+  --headerBackground2: rgba(16, 16, 16, 0.85);
+  --primaryFontFamily: "Montserrat", sans-serif;
+  --onClick: #f1f1f1;
+  --buttonColor: rgba(57, 192, 237);
+  --shadow: 1rem 1rem 1rem -1rem;
+  --shadowColor: #03b692;
+  --scrollMargin: 20px;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /******************** HEADER CSS BEGINS ********************/
 header {
-    text-align: center;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    font-family: var(--primaryFontFamily);
-    color: white;
-    z-index: 999;
-    background: var(--headerBackground1);
+  text-align: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  font-family: var(--primaryFontFamily);
+  color: white;
+  z-index: 999;
+  background: var(--headerBackground1);
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a:hover, nav a:focus-within {
-    transform: scale(1.2);
-    font-weight: bold;
+nav a:hover,
+nav a:focus-within {
+  transform: scale(1.2);
+  font-weight: bold;
 }
 
 nav a:active {
-    color: var(--onClick);
+  color: var(--onClick);
 }
 
 .header a {
-    display: block;
-    color: white;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-decoration: none;
 }
 
 .flex {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 .logo {
-    font-size: 2em;
-    padding-block: 2rem;
-    padding-inline: clamp(3rem, 10vw, 10rem);
-    margin: 0;
+  font-size: 2em;
+  padding-block: 2rem;
+  padding-inline: clamp(3rem, 10vw, 10rem);
+  margin: 0;
 }
 
 .logo span {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .toggle {
-    display: none;
+  display: none;
 }
 
 .primaryNavigation {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.2rem;
-    background: var(--headerBackground2);
-    backdrop-filter: blur(1rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  background: var(--headerBackground2);
+  backdrop-filter: blur(1rem);
 }
 
 .primaryNavigation a {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .primaryNavigation a > span {
-    font-weight: bold;
-    margin-inline-end: 0.75em;
+  font-weight: bold;
+  margin-inline-end: 0.75em;
 }
 
 /* handling mobile nav */
 @media (max-width: 70em) {
-    .primaryNavigation {
-        position: fixed;
-        z-index: 99;
-        inset: 0 0 0 30%;
-        flex-direction: column;
-        padding: min(30vh,10rem) 2em;
-        gap: 3em;
-        align-items: start;
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-    }
+  .primaryNavigation {
+    position: fixed;
+    z-index: 99;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+    gap: 3em;
+    align-items: start;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
 
-    .primaryNavigation[dataVisible="true"] {
-        transform: translateX(0%);
-    }
+  .primaryNavigation[dataVisible="true"] {
+    transform: translateX(0%);
+  }
 
-    .toggle {
-        display: flex;
-        position: absolute;
-        background-color: transparent;
-        background-image: url("./images/icon-hamburger.svg");
-        background-repeat: no-repeat;
-        z-index: 999;
-        width: 2rem;
-        border: 0;
-        font-size: 24px;
-        color: white;
-        aspect-ratio: 1;
-        top: 2.5rem;
-        right: 2rem;
-    }
+  .toggle {
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    background-image: url("./images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    z-index: 999;
+    width: 2rem;
+    border: 0;
+    font-size: 24px;
+    color: white;
+    aspect-ratio: 1;
+    top: 2.5rem;
+    right: 2rem;
+  }
 
-    .toggle[expanded="true"] {
-        background-image: url("images/icon-close.svg");
-    }
+  .toggle[expanded="true"] {
+    background-image: url("images/icon-close.svg");
+  }
 }
 
 /* handling desktop nav */
 @media (min-width: 70em) {
-    .primaryNavigation {
-        padding-block: 2rem;
-        padding-inline: clamp(3rem, 10vw, 10rem);
-        background: none;
-        backdrop-filter: none;
-    }
+  .primaryNavigation {
+    padding-block: 2rem;
+    padding-inline: clamp(3rem, 10vw, 10rem);
+    background: none;
+    backdrop-filter: none;
+  }
 }
 
 /*** CSS FOR HEADER HIDNG ***/
 #header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: all 400ms ease;
-    z-index: 99;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 400ms ease;
+  z-index: 99;
 }
 
 #header.hide {
-    top: -125px;
+  top: -125px;
 }
 
 /******************** MAIN CONTAINER CSS BEGINS ********************/
 body {
-    margin: 0;
-    padding: 0;
-    background: var(--backgroundColor);
-    font-family: var(--primaryFontFamily);
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background: var(--backgroundColor);
+  font-family: var(--primaryFontFamily);
+  overflow-x: hidden;
 }
 
 main {
-    background: var(--backgroundColor);
-    padding-top: 82px; /* padding for nav bar */
+  background: var(--backgroundColor);
+  padding-top: 82px; /* padding for nav bar */
 }
 
 h2 {
-    font-family: var(--primaryFontFamily);
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
+  font-family: var(--primaryFontFamily);
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 p {
-    font-family: var(--primaryFontFamily);
-    font-size: 18px;
+  font-family: var(--primaryFontFamily);
+  font-size: 18px;
 }
 
 /******************** PROFILE PANEL CSS BEGINS ********************/
 .profilePanel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--backgroundColor);
-    border-radius: 10px;
-    color: white;
-    font-family: var(--primaryFontFamily);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--backgroundColor);
+  border-radius: 10px;
+  color: white;
+  font-family: var(--primaryFontFamily);
 }
 
 .background {
-    position: fixed;
-    top: 0; /* start from 80px because of nav bar */
-    width: 100%;
-    height: 120%;
-    background-image: linear-gradient(to top, hsl(0 0% 0% / 0),
-    hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 0.65)), url(./images/binary.jpg);
-    background-size: contain;
-    background-repeat: repeat-x;
+  position: fixed;
+  top: 0; /* start from 80px because of nav bar */
+  width: 100%;
+  height: 120%;
+  background-image: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0),
+      hsl(20 0% 0% / 0.3) 20%,
+      hsl(0 0% 0% / 0.65)
+    ),
+    url(./images/binary.jpg);
+  background-size: contain;
+  background-repeat: repeat-x;
 }
 
 @media screen and (max-width: 1400px) {
-    .background {
-        background-size: cover;
-    }
+  .background {
+    background-size: cover;
+  }
 }
 
 .name {
-    position: relative;
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-    margin: 80px 5% 0px;
-    font-size: 48px;
-    text-transform: uppercase;
+  position: relative;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 5% 0px;
+  font-size: 48px;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
-    .name {
-        flex-direction: column;
-        gap: 0;
-    }
+  .name {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .subtitle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 25px 0px;
-    font-size: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 25px 0px;
+  font-size: 24px;
 }
 
 .socials {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75em;
-    font-size: 24px;
-    margin: 25px 0px 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75em;
+  font-size: 24px;
+  margin: 25px 0px 0px;
 }
 
 .socials a {
-    color: white;
+  color: white;
 }
 
-.socials .fa-github, 
+.socials .fa-github,
 .socials .fa-linkedin,
 .socials .fa-at {
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
-  
+
 .socials .fa-github:hover {
-    transform: rotate(360deg) scale(1.2);
+  transform: rotate(360deg) scale(1.2);
 }
 
 .socials .fa-linkedin:hover,
 .socials .fa-at:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .socials a:active {
-    color: var(--onClick);
+  color: var(--onClick);
 }
 
 .resume {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 25px 25px 0px;
-    background-color: var(--buttonColor);
-    padding: 1em 2em;
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 25px 0px;
+  background-color: var(--buttonColor);
+  padding: 1em 2em;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.resume:hover, .resume:focus-within {
-    transform: scale(1.05);
+.resume:hover,
+.resume:focus-within {
+  transform: scale(1.05);
 }
 
 .resume:active {
-    color: var(--onClick);
+  color: var(--onClick);
 }
 
 #about {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: relative;
-    gap: 25px;
-    margin: 200px 5% 25px;
-    scroll-margin-top: var(--scrollMargin);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  gap: 25px;
+  margin: 200px 5% 25px;
+  scroll-margin-top: var(--scrollMargin);
 }
 
 .picturePanel {
-    position: relative;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    background: var(--panelColor);
-    border-radius: 10px;
-    padding: 25px;
-    color: black;
-    box-shadow: var(--shadow) var(--shadowColor);
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: var(--panelColor);
+  border-radius: 10px;
+  padding: 25px;
+  color: black;
+  box-shadow: var(--shadow) var(--shadowColor);
 }
 
-.picturePanel h2 { 
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    grid-column: span 2;
+.picturePanel h2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-column: span 2;
 }
 
 @media screen and (max-width: 700px) {
-    .imagetext {
-        display: flex;
-        flex-direction: column;
-        place-items: center;    
-    }
+  .imagetext {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
 }
 
 .me {
-    display: flex;
-    height: 200px;
-    padding: 5px;
-    background: white;
-    border-radius: 5px;
-    margin: 25px;
-    grid-row: span 2 / 4;
-    min-width: 200px;
+  display: flex;
+  height: 200px;
+  padding: 5px;
+  background: white;
+  border-radius: 5px;
+  margin: 25px;
+  grid-row: span 2 / 4;
+  min-width: 200px;
 }
 
 .imagetext {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutMe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .bioPanel {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    grid-template-rows: repeat(2,fr);
-    background: var(--panelColor);
-    border-radius: 10px;
-    padding: 25px;
-    color: black;
-    box-shadow: var(--shadow) var(--shadowColor);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: repeat(2, fr);
+  background: var(--panelColor);
+  border-radius: 10px;
+  padding: 25px;
+  color: black;
+  box-shadow: var(--shadow) var(--shadowColor);
 }
 
 .bioContents {
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  font-size: 18px;
 }
 
 .bioContents a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 
 .bioContents p {
-    margin: 0;
+  margin: 0;
 }
 
 .bioContents .row {
-    margin: 25px 0px;
+  margin: 25px 0px;
 }
 
 @media screen and (max-width: 1200px) {
-    #about {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-    }
-
+  #about {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
 }
 
 /******************** GRID WITH SKILLS, PROJECTS, TOOLS, CONTACT PANELS BEGINS ********************/
 .bottomGrid {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr;
-    
-    justify-content: center;
-    align-content: center;
-    gap: 25px;
-    margin: 0 5% 25px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr;
+
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
+  margin: 0 5% 25px;
 }
 
 @media screen and (max-width: 1400px) {
-    .bottomGrid {
-        display: flex;
-        flex-direction: column;
-    }
+  .bottomGrid {
+    display: flex;
+    flex-direction: column;
+  }
 }
 /******************** SKILLS PANEL CSS BEGINS ********************/
 #skills {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: var(--panelColor);
-    border-radius: 10px;
-    padding: 25px;
-    font-family: 'Montserrat';
-    color: black;
-    box-shadow: var(--shadow) var(--shadowColor);
-    scroll-margin-top: var(--scrollMargin);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--panelColor);
+  border-radius: 10px;
+  padding: 25px;
+  font-family: "Montserrat";
+  color: black;
+  box-shadow: var(--shadow) var(--shadowColor);
+  scroll-margin-top: var(--scrollMargin);
 }
 
 #skills h2 {
-    align-self: center;
+  align-self: center;
 }
 
 .skillsPanel {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    font: 18px;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font: 18px;
+  color: black;
 }
 
 .skillsPanel h3 {
-    font-weight: 500;
-    font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .langIcon {
-    font-size: 24px;
-    padding-left: 0.5em;
+  font-size: 24px;
+  padding-left: 0.5em;
 }
 
 .progress {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .progress span {
-    display: block;
-    background-color: #00b74a;
-    height: 100%;
-    width: 80%;
-    text-align: center;
-    border-radius: 5px;
+  display: block;
+  background-color: #00b74a;
+  height: 100%;
+  width: 80%;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .progress .langJava {
-    background-color: #39c0ed;
-    width: 90%;
+  background-color: #39c0ed;
+  width: 90%;
 }
 
 .progress .langSQL {
-    background-color: #ffa900;
-    width: 65%;
+  background-color: #ffa900;
+  width: 65%;
 }
 
 /******************** PROJECT PANEL CSS BEGINS ********************/
 #projects {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    background: var(--panelColor);
-    border-radius: 10px;
-    padding: 25px;
-    font-family: 'Montserrat';
-    color: black;
-    box-shadow: var(--shadow) var(--shadowColor);
-    scroll-margin-top: var(--scrollMargin);
-    grid-column: span 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: var(--panelColor);
+  border-radius: 10px;
+  padding: 25px;
+  font-family: "Montserrat";
+  color: black;
+  box-shadow: var(--shadow) var(--shadowColor);
+  scroll-margin-top: var(--scrollMargin);
+  grid-column: span 2;
 }
 
 .projectPanel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
 @media screen and (max-width: 1000px) {
-
-    .projectPanel {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        padding: 0px 25px;
-    }
-
+  .projectPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 0px 25px;
+  }
 }
 
 .card {
-    display: flex;
-    background-color: #f1f1f1;
-    background-size: contain;
-    background-position: center;
-    border-radius: 0.5rem;
-    color: white;
-    padding: 10 10;
-    max-width: 30ch;
-    min-width: 30ch;
-    height: 30ch;
-    overflow: hidden;
-    transition: transform 500ms ease;
+  display: flex;
+  background-color: #f1f1f1;
+  background-size: contain;
+  background-position: center;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 10 10;
+  max-width: 30ch;
+  min-width: 30ch;
+  height: 30ch;
+  overflow: hidden;
+  transition: transform 500ms ease;
 }
 
 .card:hover,
 .card:focus-within {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .cardContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    --padding: 1.5rem;
-    padding: var(--padding);
-    background: linear-gradient(
-        hsl(0 0% 0% / 0),
-        hsl(20 0% 0% / 0.5) 20%,
-        hsl(0 0% 0% / 1)
-    );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.5) 20%,
+    hsl(0 0% 0% / 1)
+  );
 }
 
 .cardTitle {
-    position: relative;
-    width: max-content;
-    max-width: 100%;
-    padding-bottom: 5px;
-    color: white;
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding-bottom: 5px;
+  color: white;
 }
 
 .cardTitle::after {
-    content: "";
-    position: absolute;
-    height: 4px;
-    left: calc(var(--padding) * -1);
-    bottom: -2px;
-    width: calc(100% + var(--padding));
-    background: var(--buttonColor);
-    transform-origin: left;
-    transition: transform 500ms ease;
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  width: calc(100% + var(--padding));
+  background: var(--buttonColor);
+  transform-origin: left;
+  transition: transform 500ms ease;
 }
 
 .card:hover .cardTitle::after,
 .card:focus-within .cardTitle::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .cardBody {
-    color: white;
+  color: white;
 }
 
 @media (hover) {
-    
-    .cardContent {
-        transform: translateY(65%);
-        transition: transform 500ms ease;
-    }
+  .cardContent {
+    transform: translateY(65%);
+    transition: transform 500ms ease;
+  }
 
-    .card:hover .cardContent,
-    .card:focus-within .cardContent {
-        transform: translateY(0);
-        transition-delay: 500ms;
-    }
+  .card:hover .cardContent,
+  .card:focus-within .cardContent {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
 
-    .card:focus-within .cardContent {
-        transition-duration: 0ms;
-        transition-delay: 0ms;
-    }
+  .card:focus-within .cardContent {
+    transition-duration: 0ms;
+    transition-delay: 0ms;
+  }
 
-    .cardContent > *:not(.cardTitle) {
-        opacity: 0;
-        transition: opacity 500ms linear;
-    }
+  .cardContent > *:not(.cardTitle) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
 
-    .card:hover .cardContent > *:not(.cardTitle) {
-        opacity: 1;
-        transition-delay: 800ms;
-    }
+  .card:hover .cardContent > *:not(.cardTitle) {
+    opacity: 1;
+    transition-delay: 800ms;
+  }
 
-    .card:focus-within .cardContent > *:not(.cardTitle) {
-        opacity: 1;
-        transition-delay: 0ms;
-    }
+  .card:focus-within .cardContent > *:not(.cardTitle) {
+    opacity: 1;
+    transition-delay: 0ms;
+  }
 
-    .cardTitle::after {
-        transform: scaleX(0);
-    }
+  .cardTitle::after {
+    transform: scaleX(0);
+  }
 }
 
 .button {
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: var(--buttonColor);
-    color: white;
-    padding: 0.5em 1.25em;
-    border-radius: 0.25em;
-    font-weight: bold;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--buttonColor);
+  color: white;
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+  font-weight: bold;
 }
 
 .button:hover,
 .button:focus {
-    background-color: rgb(44, 151, 187);
+  background-color: rgb(44, 151, 187);
 }
 
 .button:active {
-    color: var(--onClick);
+  color: var(--onClick);
 }
 
 .website {
-    background-image: url(./images/website-image.png);
-    background-size: cover;
+  background-image: url(./images/website-image.png);
+  background-size: cover;
 }
 
 .video {
-    background-image: url(./images/youtube-image.jpg);
+  background-image: url(./images/youtube-image.jpg);
 }
 
 .doc {
-    background-image: url(./images/document-image.jpg);
+  background-image: url(./images/document-image.jpg);
 }
 
 /******************** TOOL PANEL & CONTACT PANEL CSS BEGINS ********************/
-.tools, #contact {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--panelColor);
-    border-radius: 10px;
-    padding: 25px;
-    font-family: 'Montserrat';
-    color: black;
-    box-shadow: var(--shadow) var(--shadowColor);
-    scroll-margin-top: var(--scrollMargin);
-    grid-column: span 2;
-    gap: 25px;
+.tools,
+#contact {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--panelColor);
+  border-radius: 10px;
+  padding: 25px;
+  font-family: "Montserrat";
+  color: black;
+  box-shadow: var(--shadow) var(--shadowColor);
+  scroll-margin-top: var(--scrollMargin);
+  grid-column: span 2;
+  gap: 25px;
 }
 
 #contact {
-    grid-column: span 1;
+  grid-column: span 1;
 }
 
 .toolsPanel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  flex-wrap: wrap;
 }
 
 .contactPanel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
 }
 
 .logos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 64px;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  color: black;
 }
 
 .logos a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .contactPanel .logos:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /******************** EMPTY DIV AT END FOR AESTHETIC ********************/
 
 .empty {
-    position: relative;
-    opacity: 0;
-    height: 10vh;
+  position: relative;
+  opacity: 0;
+  height: 10vh;
 }
