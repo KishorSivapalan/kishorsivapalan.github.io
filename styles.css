@@ -656,6 +656,10 @@ p {
   background-image: url(./images/document-image.jpg);
 }
 
+.calculator {
+  background-image: url(./images/calculator.png);
+}
+
 /******************** TOOL PANEL & CONTACT PANEL CSS BEGINS ********************/
 .tools,
 #contact {
